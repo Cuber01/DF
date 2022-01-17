@@ -6,12 +6,12 @@ namespace DF.General
 {
     public class Space
     {
-        private List<Star> stars = new List<Star>();
+        private readonly List<Star> stars = new List<Star>();
 
         private const int minVelocity = 1;
         private const int maxVelocity = 4;
 
-        private static Color[] starColors = 
+        private static readonly Color[] starColors = 
         {
             palette.dark_blue,
             palette.dark_gray
@@ -68,10 +68,10 @@ namespace DF.General
             }
             
             public Vector2 position;
-            public int trailLength;
-            public float velocity;
+            public readonly int trailLength;
+            public readonly float velocity;
             
-            public Color color;
+            public readonly Color color;
         }
         
     }

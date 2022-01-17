@@ -35,6 +35,8 @@ namespace DF.General
         {
             foreach (var ase in aseprite)
             {
+                if (ase.Value.Frames.Count == 1) continue;
+                
                 animations.Add(ase.Key, new AnimatedSprite(ase.Value));
             }    
         }

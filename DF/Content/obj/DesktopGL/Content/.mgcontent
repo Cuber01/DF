@@ -4,9 +4,65 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/ufo.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_blue1.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_green_big.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_green1.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_green2.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_pink1.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_red1.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_yellow1.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/alien_yellow2.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/asteroid11x9.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/asteroid12x12.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/asteroid16x8.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/asteroid6x5.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/asteroid7x7.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/bomb.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/bullet_bold.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/coin.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/double_bullet.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/heart.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/huge_bullet.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/laser_part.aseprite</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/laser_top.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/pig_huge.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/robot_big.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/robot1.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/ship.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/single_bullet.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/small_bullet.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/triple_bullet.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/ufo1.ase</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

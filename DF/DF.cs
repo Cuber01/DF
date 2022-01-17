@@ -118,8 +118,8 @@ namespace DF
 
         private void updateGame(GameTime gameTime)
         {
-            Assets.animations["ufo"].Play("main");
-            Assets.animations["ufo"].Update(gameTime);
+            Assets.animations["coin"].Play("idle");
+            Assets.animations["coin"].Update(gameTime);
             
             spaceBG.update();
         }
@@ -128,7 +128,7 @@ namespace DF
         {
             spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
             
-            Assets.animations["ufo"].Render(spriteBatch);
+            Assets.animations["coin"].Render(spriteBatch);
             spaceBG.draw();
 
             spriteBatch.End();
