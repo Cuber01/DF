@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/small_bullet.ase</SourceFile>
-  <SourceTime>2022-01-17T14:29:01.0436168+01:00</SourceTime>
+  <SourceTime>2022-01-17T21:07:54.6650317+01:00</SourceTime>
   <DestFile>/home/cubeq/RiderProjects/DF/DF/Content/bin/DesktopGL/Content/assets/images/small_bullet.xnb</DestFile>
-  <DestTime>2022-01-17T17:11:12.8138504+01:00</DestTime>
+  <DestTime>2022-01-17T21:14:00.1096047+01:00</DestTime>
   <Importer>AsepriteDocumentImporter</Importer>
   <ImporterTime>2021-01-25T00:40:14+01:00</ImporterTime>
   <Processor>AsepriteDocumentProcessor</Processor>

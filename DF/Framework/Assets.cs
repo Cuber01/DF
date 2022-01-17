@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using System.IO;
-using MonoGame.Aseprite.Documents;
 using Microsoft.Xna.Framework.Content;
+using MonoGame.Aseprite.Documents;
 using MonoGame.Aseprite.Graphics;
 
-namespace DF.General
+namespace DF.Framework
 {
     public class Assets
     {
         public static Dictionary<string, AnimatedSprite> animations = new Dictionary<string, AnimatedSprite>();
-        public Dictionary<string, AsepriteDocument> aseprite = new Dictionary<string, AsepriteDocument>();
+        private Dictionary<string, AsepriteDocument> aseprite = new Dictionary<string, AsepriteDocument>();
 
         private readonly ContentManager Content;
         public Assets(ContentManager contentManager)
@@ -35,8 +35,6 @@ namespace DF.General
         {
             foreach (var ase in aseprite)
             {
-                if (ase.Value.Frames.Count == 1) continue;
-                
                 animations.Add(ase.Key, new AnimatedSprite(ase.Value));
             }    
         }
