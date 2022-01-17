@@ -1,4 +1,6 @@
-﻿using DF.General;
+﻿using DF.Framework;
+using DF.General;
+using DF.General.Framework;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,8 +10,7 @@ namespace DF
     public class GameMain : Game
     {
         public static GameState gameState = GameState.playing;
-
-
+        
         public const int canvasWidth = 128;
         public const int canvasHeight = 128;
 
@@ -19,11 +20,12 @@ namespace DF
         private const int windowHeight = canvasWidth * scale;
 
         private readonly Matrix scaleMatrix = Matrix.CreateScale(scale, scale, 1.0f);
-        private readonly GraphicsDeviceManager graphics;
+        public readonly GraphicsDeviceManager graphics;
 
         public static SpriteBatch spriteBatch;
-        //private static DrawUtils draw;
 
+        private DrawUtils draw;
+        
         public GameMain()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -39,6 +41,7 @@ namespace DF
             graphics.ApplyChanges();
 
             spriteBatch = new SpriteBatch(GraphicsDevice, 0);
+            draw = new DrawUtils(GraphicsDevice, spriteBatch);
             
             base.Initialize();
 
@@ -46,6 +49,8 @@ namespace DF
 
         protected override void LoadContent()
         {
+            
+            
             Assets assets = new Assets(Content);
             assets.loadTextures("/assets/images/");
         }
@@ -123,6 +128,8 @@ namespace DF
             spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
             
             Assets.animations["ufo"].Render(spriteBatch);
+            
+            draw.spixel(20, 20, c.yellow);
 
             spriteBatch.End();
         }
