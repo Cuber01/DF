@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using MonoGame.Aseprite.Documents;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using MonoGame.Aseprite.Graphics;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace DF.General
 {
