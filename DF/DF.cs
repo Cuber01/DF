@@ -1,6 +1,5 @@
 ﻿using DF.Framework;
 using DF.General;
-using DF.General.Framework;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -24,7 +23,8 @@ namespace DF
 
         public static SpriteBatch spriteBatch;
 
-        private DrawUtils draw;
+        public static DrawUtils draw;
+        private Space spaceBG;
         
         public GameMain()
         {
@@ -42,6 +42,7 @@ namespace DF
 
             spriteBatch = new SpriteBatch(GraphicsDevice, 0);
             draw = new DrawUtils(GraphicsDevice, spriteBatch);
+            spaceBG = new Space();
             
             base.Initialize();
 
@@ -49,8 +50,6 @@ namespace DF
 
         protected override void LoadContent()
         {
-            
-            
             Assets assets = new Assets(Content);
             assets.loadTextures("/assets/images/");
         }
@@ -121,6 +120,8 @@ namespace DF
         {
             Assets.animations["ufo"].Play("main");
             Assets.animations["ufo"].Update(gameTime);
+            
+            spaceBG.update();
         }
 
         private void drawGame()
@@ -128,8 +129,7 @@ namespace DF
             spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
             
             Assets.animations["ufo"].Render(spriteBatch);
-            
-            draw.spixel(20, 20, c.yellow);
+            spaceBG.draw();
 
             spriteBatch.End();
         }

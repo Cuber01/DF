@@ -1,8 +1,8 @@
 using Microsoft.Xna.Framework;
 
-namespace DF.General.Framework
+namespace DF.Framework
 {
-    public struct c
+    public struct palette
     {
         public static Color black       = new Color(0, 0, 0);
         public static Color dark_blue   = new Color(29, 43, 83);
