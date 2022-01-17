@@ -1,4 +1,6 @@
-﻿using DF.Framework;
+﻿using DF.Content;
+using DF.Entities;
+using DF.Framework;
 using DF.Framework.Input;
 using DF.General;
 using Microsoft.Xna.Framework;
@@ -9,23 +11,17 @@ namespace DF
 
     public class GameMain : Game
     {
-        public static GameState gameState = GameState.playing;
+        private static GameState gameState = GameState.playing;
         
-        public const int canvasWidth = 128;
-        public const int canvasHeight = 128;
-
-        public const int scale = 8;
-
-        private const int windowWidth = canvasWidth * scale;
-        private const int windowHeight = canvasWidth * scale;
-
-        private readonly Matrix scaleMatrix = Matrix.CreateScale(scale, scale, 1.0f);
-        public readonly GraphicsDeviceManager graphics;
-
+        private readonly Matrix scaleMatrix = Matrix.CreateScale(GConstants.scale, GConstants.scale, 1.0f);
+        private readonly GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
 
         public static DrawUtils draw;
         private Space spaceBG;
+        
+        public Player player;
+        
         
         public GameMain()
         {
@@ -37,8 +33,8 @@ namespace DF
 
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = windowWidth;
-            graphics.PreferredBackBufferHeight = windowHeight;
+            graphics.PreferredBackBufferWidth = GConstants.windowWidth;
+            graphics.PreferredBackBufferHeight = GConstants.windowHeight;
             graphics.ApplyChanges();
 
             spriteBatch = new SpriteBatch(GraphicsDevice, 0);
@@ -53,6 +49,9 @@ namespace DF
         {
             Assets assets = new Assets(Content);
             assets.loadTextures("/assets/images/");
+
+            // I really wanna keep my player outside of the main update loop. This sacrifice should save a lot of dirty code.
+            player = new Player(new Vector2(100, 100));
         }
 
         protected override void Update(GameTime gameTime)
@@ -121,9 +120,10 @@ namespace DF
         {
             Input.update();
             
-            Assets.animations["coin"].Play("idle");
-            Assets.animations["coin"].Update(gameTime);
+            spaceBG.update();
             
+            player.update(gameTime);
+
             spaceBG.update();
         }
 
@@ -131,8 +131,9 @@ namespace DF
         {
             spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
             
-            Assets.animations["coin"].Render(spriteBatch);
             spaceBG.draw();
+            
+            player.draw();
 
             spriteBatch.End();
         }

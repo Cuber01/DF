@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DF.Content;
 using DF.Framework;
 using Microsoft.Xna.Framework;
 
@@ -20,7 +21,7 @@ namespace DF.General
         
         public void update()
         {
-            for (int i = 0; i <= GameMain.canvasWidth; i++)
+            for (int i = 0; i <= GConstants.canvasWidth; i++)
             {
                 
                 if (Util.randomBool(0.999f))

@@ -10,12 +10,14 @@ namespace DF.Entities
     public class Player : Entity
     {
 
-        private const float speed = 0.3f;
-        private const float friction = 0.65f;
+        private const float speed = 0.21f;
+        private const float friction = 0.96f;
         private const float maxVelocity = 6;
 
-        public Player()
+        public Player(Vector2 position)
         {
+            this.position = position;
+
             sprite = Assets.animations["ship"];
             sprite.Play("idle");
         }
@@ -25,7 +27,9 @@ namespace DF.Entities
             reactToInput();
             applyFriction();
             move();
-            
+
+            sprite.X = position.X;
+            sprite.Y = position.Y;
             sprite.Update(gameTime);
         }
         
