@@ -8,6 +8,9 @@ namespace DF.General
     {
         private List<Star> stars = new List<Star>();
 
+        private const int minVelocity = 1;
+        private const int maxVelocity = 4;
+
         private static Color[] starColors = 
         {
             palette.dark_blue,
@@ -19,12 +22,23 @@ namespace DF.General
             for (int i = 0; i <= GameMain.canvasWidth; i++)
             {
                 
-                if (Util.randomBool(0.1f))
+                if (Util.randomBool(0.999f))
                 {
-                    stars.Add(new Star(new Point(i, 0), starColors[ Util.random.Next(0, starColors.Length) ] ));
+                    stars.Add(new Star(new Vector2(i, 0), Util.random.Next(minVelocity, maxVelocity), starColors[ Util.random.Next(0, starColors.Length) ] ));
                 }
                 
             }
+
+            for (int i = 0; i <= stars.Count - 1; i++)
+            {
+                var star_tmp = stars[i];
+
+                star_tmp.position.Y += star_tmp.velocity;
+
+                stars[i] = star_tmp;    
+            }
+            
+            
         }
         
         public void draw()
@@ -33,20 +47,30 @@ namespace DF.General
 
             foreach (var star in stars)
             {
-                d.spixel(star.position.X, star.position.Y, star.color);
+                //d.spixel((int)star.position.X, (int)star.position.Y, star.color);
+                for (int i = 0; i <= star.trailLength; i++)
+                {
+                    d.spixel((int)star.position.X, (int)star.position.Y+i, star.color);
+                }
             }
 
         }
     
         private struct Star
         {
-            public Star(Point position, Color color)
+            public Star(Vector2 position, float velocity, Color color)
             {
+                this.velocity = velocity;
                 this.position = position;
+
+                this.trailLength = (int)velocity;
                 this.color = color;
             }
             
-            public Point position;
+            public Vector2 position;
+            public int trailLength;
+            public float velocity;
+            
             public Color color;
         }
         
