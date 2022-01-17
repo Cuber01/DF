@@ -42,23 +42,13 @@ namespace DF
             spriteBatch = new SpriteBatch(GraphicsDevice, 0);
             
             base.Initialize();
-            //
-            // draw = new DrawUtils(GraphicsDevice, spriteBatch);
-            //
-            // GEventResponse.subscribeGeneralMethods();
+
         }
 
         protected override void LoadContent()
         {
-            // spriteBatch = new SpriteBatch(GraphicsDevice);
             Assets assets = new Assets(Content);
-            //
-            assets.load();
-            // assetLoader.loadSounds();
-            // assetLoader.loadFonts();
-            //
-            // SoundManager.init();
-
+            assets.loadTextures("/assets/images/");
         }
 
         protected override void Update(GameTime gameTime)
@@ -125,83 +115,15 @@ namespace DF
 
         private void updateGame(GameTime gameTime)
         {
-
-            Assets.sprite.Play("main");
-            Assets.sprite.Update(gameTime);
-            
-            // Input.updateKeyboardState();
-            // Input.updateMouseState();
-            //
-            // GEventHandler.update();
-            // GEventHandler.clearEvents();
-
-            //spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
-            //
-            // foreach (Entity spawn in entitiesToBeSpawned)
-            // {
-            //     entities.Add(spawn);
-            // }
-            //
-            // entitiesToBeSpawned.Clear();
-            //
-            // foreach (Entity entity in entities)
-            // {
-            //     if (entity.dead)
-            //     {
-            //         entitiesToBeKilled.Add(entity);
-            //     }
-            //
-            //     entity.update();
-            //
-            //     if (RoomLoader.changingRoom)
-            //     {
-            //         RoomLoader.changingRoom = false;
-            //         break;
-            //     }
-            // }
-            //
-            // foreach (Entity victim in entitiesToBeKilled)
-            // {
-            //     entities.Remove(victim);
-            // }
-            //
-            // playerHP.text = Player.stats.hitpoints.ToString();
-            //
-            // entitiesToBeKilled.Clear();
-            //
-            // FontRenderer.dissappearingTextQueue.Add(playerHP);
-            // FontRenderer.textQueue.Add(playerHP);
-
-            //spriteBatch.End();
-
+            Assets.animations["ufo"].Play("main");
+            Assets.animations["ufo"].Update(gameTime);
         }
 
         private void drawGame()
         {
             spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
-
-         
-            Assets.sprite.Render(spriteBatch);
-         
             
-            // //draw.drawGrid(Color.Gray);
-            //
-            // foreach( Entity entity in entities )
-            // {
-            //     entity.draw();
-            //     
-            //     //entity.collider.draw(draw);
-            // }
-            //
-            // // Heart GUI
-            // spriteBatch.Draw(AssetLoader.textures[dTextureKeys.heart], new Vector2(2, 2), Color.White);
-            //
-            // spriteBatch.End();
-            //
-            // // Fonts
-            // spriteBatch.Begin();
-            //
-            // FontRenderer.renderQueue();
+            Assets.animations["ufo"].Render(spriteBatch);
 
             spriteBatch.End();
         }

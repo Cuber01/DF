@@ -4,7 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/ufo.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/ufo.ase</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/cubeq/RiderProjects/DF/DF/Content/assets/ufo.ase</SourceFile>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/ufo.ase</SourceFile>
   <SourceTime>2022-01-13T19:37:27.7217175+01:00</SourceTime>
-  <DestFile>/home/cubeq/RiderProjects/DF/DF/Content/bin/DesktopGL/Content/assets/ufo.xnb</DestFile>
-  <DestTime>2022-01-13T19:37:34.473362+01:00</DestTime>
+  <DestFile>/home/cubeq/RiderProjects/DF/DF/Content/bin/DesktopGL/assets/images/ufo.xnb</DestFile>
+  <DestTime>2022-01-16T09:01:45.7153588+01:00</DestTime>
   <Importer>AsepriteDocumentImporter</Importer>
   <ImporterTime>2021-01-25T00:40:14+01:00</ImporterTime>
   <Processor>AsepriteDocumentProcessor</Processor>

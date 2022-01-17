@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using MonoGame.Aseprite.Documents;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -9,7 +11,7 @@ namespace DF.General
 {
     public class Assets
     {
-        public Dictionary<string, AnimatedSprite> animations = new Dictionary<string, AnimatedSprite>();
+        public static Dictionary<string, AnimatedSprite> animations = new Dictionary<string, AnimatedSprite>();
         public Dictionary<string, AsepriteDocument> aseprite = new Dictionary<string, AsepriteDocument>();
 
         private readonly ContentManager Content;
@@ -18,13 +20,18 @@ namespace DF.General
             this.Content = contentManager;
         }
         
-        public void loadTextures()
+        public void loadTextures(string directory)
         {
+            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory() + "/Content" + directory, "", SearchOption.TopDirectoryOnly);
+
+            foreach (var file in files)
+            {
+                aseprite.Add(Path.GetFileNameWithoutExtension(file),
+                            Content.Load<AsepriteDocument>(file.Substring(0, file.Length - 4
+                            )));
+            }
             
-            string[] files = 
-                Directory.GetFiles(txtPath.Text, "*ProfileHandler.cs", SearchOption.AllDirectories);
-            //aseprite = Content.Load<AsepriteDocument>("assets/ufo");
-            //sprite = new AnimatedSprite(aseprite);
+            asepriteToAnimation();
         }
 
         private void asepriteToAnimation()
