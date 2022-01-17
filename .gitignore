@@ -1,0 +1,6 @@
+.git
+DF/bin/*
+.idea/.idea.DF/.idea/vcs.xml
+*.exe
+*.pdb
+*.dll
