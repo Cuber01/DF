@@ -6,6 +6,7 @@ namespace DF.General
 {
     public class Space
     {
+        // TODO we never remove stars from this list...
         private readonly List<Star> stars = new List<Star>();
 
         private const int minVelocity = 1;
@@ -47,7 +48,7 @@ namespace DF.General
 
             foreach (var star in stars)
             {
-                //d.spixel((int)star.position.X, (int)star.position.Y, star.color);
+
                 for (int i = 0; i <= star.trailLength; i++)
                 {
                     d.spixel((int)star.position.X, (int)star.position.Y+i, star.color);

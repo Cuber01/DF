@@ -1,4 +1,5 @@
 ﻿using DF.Framework;
+using DF.Framework.Input;
 using DF.General;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -118,6 +119,8 @@ namespace DF
 
         private void updateGame(GameTime gameTime)
         {
+            Input.update();
+            
             Assets.animations["coin"].Play("idle");
             Assets.animations["coin"].Update(gameTime);
             
