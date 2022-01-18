@@ -54,3 +54,4 @@
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.dll
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Collisions.dll
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Tweening.dll

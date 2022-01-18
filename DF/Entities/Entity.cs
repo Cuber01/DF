@@ -6,7 +6,7 @@ namespace DF.Entities
     public class Entity
     {
         protected AnimatedSprite sprite;
-        protected Vector2 position;
+        public Vector2 position;
         protected Vector2 velocity;
         
         public virtual void update(GameTime gameTime)

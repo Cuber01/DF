@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 using MonoGame.Extended.Collisions;
+using MonoGame.Extended.Tweening;
 
 namespace DF
 {
@@ -22,6 +23,8 @@ namespace DF
         
         private readonly GraphicsDeviceManager graphics;
         public static CollisionComponent collision;
+        public static Tweener tweener;
+        
         public static SpriteBatch spriteBatch;
 
         public static DrawUtils draw;
@@ -33,6 +36,8 @@ namespace DF
         public GameMain()
         {
             graphics = new GraphicsDeviceManager(this);
+            tweener = new Tweener();
+            
             collision = new CollisionComponent(new RectangleF(0,0, GConstants.canvasWidth, GConstants.canvasHeight));
             
             Content.RootDirectory = "Content";
@@ -66,6 +71,7 @@ namespace DF
             player = new Player(new Vector2(100, 100));
             
             entities.Add(new GreenAlien(new Vector2(50, 50)));
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -139,6 +145,7 @@ namespace DF
             player.update(gameTime);
                 
             collision.Update(gameTime);
+            tweener.Update(gameTime.GetElapsedSeconds());
             
             foreach (var entity in entities)
             {

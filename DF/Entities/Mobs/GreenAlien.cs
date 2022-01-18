@@ -2,6 +2,7 @@ using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
 using MonoGame.Extended;
+using MonoGame.Extended.Tweening;
 
 namespace DF.Entities
 {
@@ -16,12 +17,24 @@ namespace DF.Entities
             
             sprite = Assets.animations["alien_green2"];
             sprite.Play("idle");
+            
+            move();
         }
 
         public override void update(GameTime gameTime)
         {
             updateSprite(gameTime);
             hitbox.update(position);
+        }
+
+        private void move()
+        {
+            // GameMain.tweener.TweenTo(target: this, expression: me => this.position, toValue: new Vector2(100, 100), duration: 2, delay: 1)
+            //     .Easing(EasingFunctions.Linear);
+            
+            // CubicIn - Accelerate, sudden stop
+            // QuadraticIn - Accelerate, slow down near end
+            // BackOut/ElasticOut - Start fast and back off
         }
 
     }
