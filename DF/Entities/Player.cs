@@ -27,17 +27,10 @@ namespace DF.Entities
             reactToInput();
             applyFriction();
             move();
+            
+            updateSprite(gameTime);
+        }
 
-            sprite.X = position.X;
-            sprite.Y = position.Y;
-            sprite.Update(gameTime);
-        }
-        
-        public override void draw()
-        {
-            sprite.Render(GameMain.spriteBatch);
-        }
-        
         private void move()
         {
             Vector2 newPosition = position + velocity * speed;

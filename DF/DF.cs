@@ -1,4 +1,5 @@
-﻿using DF.Content;
+﻿using System.Collections.Generic;
+using DF.Content;
 using DF.Entities;
 using DF.Framework;
 using DF.Framework.Input;
@@ -12,6 +13,7 @@ namespace DF
     public class GameMain : Game
     {
         private static GameState gameState = GameState.playing;
+        private List<Entity> entities = new List<Entity>();
         
         private readonly Matrix scaleMatrix = Matrix.CreateScale(GConstants.scale, GConstants.scale, 1.0f);
         private readonly GraphicsDeviceManager graphics;
@@ -52,6 +54,8 @@ namespace DF
 
             // I really wanna keep my player outside of the main update loop. This sacrifice should save a lot of dirty code.
             player = new Player(new Vector2(100, 100));
+            
+            entities.Add(new GreenAlien(new Vector2(50, 50)));
         }
 
         protected override void Update(GameTime gameTime)
@@ -123,6 +127,11 @@ namespace DF
             spaceBG.update();
             
             player.update(gameTime);
+            
+            foreach (var entity in entities)
+            {
+                entity.update(gameTime);
+            }
 
             spaceBG.update();
         }
@@ -134,6 +143,11 @@ namespace DF
             spaceBG.draw();
             
             player.draw();
+
+            foreach (var entity in entities)
+            {
+                entity.draw();
+            }
 
             spriteBatch.End();
         }

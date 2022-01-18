@@ -16,7 +16,15 @@ namespace DF.Entities
 
         public virtual void draw()
         {
+            sprite.Render(GameMain.spriteBatch);
+        }
+
+        protected void updateSprite(GameTime gameTime)
+        {
+            sprite.X = position.X;
+            sprite.Y = position.Y;
             
+            sprite.Update(gameTime);
         }
     }
 }
