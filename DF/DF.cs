@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DF.Content;
 using DF.Entities;
 using DF.Framework;
@@ -17,7 +18,7 @@ namespace DF
     public class GameMain : Game
     {
         private static GameState gameState = GameState.playing;
-        private List<Entity> entities = new List<Entity>();
+        public static List<Entity> entities = new List<Entity>();
         
         private readonly Matrix scaleMatrix = Matrix.CreateScale(GConstants.scale, GConstants.scale, 1.0f);
         
@@ -30,7 +31,7 @@ namespace DF
         public static DrawUtils draw;
         private Space spaceBG;
         
-        public Player player;
+        public static Player player;
         
         
         public GameMain()
@@ -146,10 +147,10 @@ namespace DF
                 
             collision.Update(gameTime);
             tweener.Update(gameTime.GetElapsedSeconds());
-            
-            foreach (var entity in entities)
+
+            for (int i = 0; i <= entities.Count - 1; i++)
             {
-                entity.update(gameTime);
+                entities[i].update(gameTime);
             }
 
             spaceBG.update();
@@ -160,13 +161,13 @@ namespace DF
             spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
             
             spaceBG.draw();
-            
-            player.draw();
 
             foreach (var entity in entities)
             {
                 entity.draw();
             }
+            
+            player.draw();
 
             spriteBatch.End();
         }

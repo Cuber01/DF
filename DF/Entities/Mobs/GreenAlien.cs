@@ -1,3 +1,4 @@
+using DF.Entities.Projectiles;
 using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
@@ -21,16 +22,24 @@ namespace DF.Entities
             move();
         }
 
+        private bool simp = true;
         public override void update(GameTime gameTime)
         {
             updateSprite(gameTime);
             hitbox.update(position);
+
+            if (simp)
+            {
+                GameMain.entities.Add(new BulletBold(GameMain.player.position, position));
+                simp = false;
+            }
+            
         }
 
         private void move()
         {
             // GameMain.tweener.TweenTo(target: this, expression: me => this.position, toValue: new Vector2(100, 100), duration: 2, delay: 1)
-            //     .Easing(EasingFunctions.Linear);
+            //     .Easing(EasingFunctions.ElasticOut);
             
             // CubicIn - Accelerate, sudden stop
             // QuadraticIn - Accelerate, slow down near end
