@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using MonoGame.Aseprite.Graphics;
-using MonoGame.Extended.Collisions;
 
 namespace DF.Entities
 {

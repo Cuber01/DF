@@ -1,7 +1,3 @@
-using DF.General;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
 namespace DF.Content
 {
     public class GConstants
