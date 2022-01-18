@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "jLqh9mLpudsl0QhDxnDgcRA/1DqMQpqJ1YGVyLH1Kq+E1eIQud/yinbo2EtgP2m+mQRMLX6JfGFGGF27QsXXnw==",
+  "dgSpecHash": "R8Twhx5pr0cZz10wxtEGeC58qpjgmsWGjX6ZztJsoF7nPeD0E9c3Exk47qy3VvSVY3/DXmQLA6nL5HLcJGEisg==",
   "success": true,
   "projectFilePath": "/home/cubeq/RiderProjects/DF/DF/DF.csproj",
   "expectedPackageFiles": [
     "/home/cubeq/.nuget/packages/monogame.aseprite/2.0.4.1/monogame.aseprite.2.0.4.1.nupkg.sha512",
     "/home/cubeq/.nuget/packages/monogame.content.builder.task/3.8.0.1641/monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
-    "/home/cubeq/.nuget/packages/monogame.framework.desktopgl/3.8.0.1641/monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+    "/home/cubeq/.nuget/packages/monogame.extended/3.8.0/monogame.extended.3.8.0.nupkg.sha512",
+    "/home/cubeq/.nuget/packages/monogame.extended.collisions/3.8.0/monogame.extended.collisions.3.8.0.nupkg.sha512",
+    "/home/cubeq/.nuget/packages/monogame.framework.desktopgl/3.8.0.1641/monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "/home/cubeq/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

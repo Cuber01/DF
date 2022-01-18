@@ -3,13 +3,13 @@ using DF.Framework.Input;
 using DF.General;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using MonoGame.Aseprite.Graphics;
+using MonoGame.Extended;
 
 namespace DF.Entities
 {
     public class Player : Entity
     {
-
+        private Collider hitbox;
         private const float speed = 0.21f;
         private const float friction = 0.96f;
         private const float maxVelocity = 6;
@@ -17,7 +17,10 @@ namespace DF.Entities
         public Player(Vector2 position)
         {
             this.position = position;
-
+            this.hitbox = new Collider(new RectangleF(position, new Size2(8, 8)));
+            
+            GameMain.collision.Insert(hitbox);
+            
             sprite = Assets.animations["ship"];
             sprite.Play("idle");
         }
@@ -29,6 +32,8 @@ namespace DF.Entities
             move();
             
             updateSprite(gameTime);
+            
+            hitbox.update(position);
         }
 
         private void move()

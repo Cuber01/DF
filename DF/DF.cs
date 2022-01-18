@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DF.Content;
 using DF.Entities;
 using DF.Framework;
 using DF.Framework.Input;
 using DF.General;
+using Microsoft.VisualBasic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended;
+using MonoGame.Extended.Collisions;
 
 namespace DF
 {
@@ -16,7 +20,9 @@ namespace DF
         private List<Entity> entities = new List<Entity>();
         
         private readonly Matrix scaleMatrix = Matrix.CreateScale(GConstants.scale, GConstants.scale, 1.0f);
+        
         private readonly GraphicsDeviceManager graphics;
+        public static CollisionComponent collision;
         public static SpriteBatch spriteBatch;
 
         public static DrawUtils draw;
@@ -28,7 +34,8 @@ namespace DF
         public GameMain()
         {
             graphics = new GraphicsDeviceManager(this);
-
+            collision = new CollisionComponent(new RectangleF(0,0, GConstants.canvasWidth, GConstants.canvasHeight));
+            
             Content.RootDirectory = "Content";
             IsMouseVisible = false;
         }
@@ -38,6 +45,10 @@ namespace DF
             graphics.PreferredBackBufferWidth = GConstants.windowWidth;
             graphics.PreferredBackBufferHeight = GConstants.windowHeight;
             graphics.ApplyChanges();
+            
+            // Cap at 60fps
+            this.IsFixedTimeStep = true;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / 60d);
 
             spriteBatch = new SpriteBatch(GraphicsDevice, 0);
             draw = new DrawUtils(GraphicsDevice, spriteBatch);
@@ -125,8 +136,10 @@ namespace DF
             Input.update();
             
             spaceBG.update();
-            
+
             player.update(gameTime);
+                
+            collision.Update(gameTime);
             
             foreach (var entity in entities)
             {
