@@ -10,7 +10,7 @@ namespace DF.Entities.Projectiles
         
         public BulletBold(Vector2 targetPos, Vector2 position) : base(targetPos, position)
         {
-            this.sprite = Assets.animations["bullet_bold"];
+            this.sprite = Assets.asepriteToAnimation("bullet_bold");
             this.hitbox = new Collider(new RectangleF(position.X, position.Y, 4, 4));
             this.speed = 0.2f;
             

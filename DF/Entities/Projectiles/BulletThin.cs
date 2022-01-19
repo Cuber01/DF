@@ -2,6 +2,7 @@ using System;
 using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
+using MonoGame.Aseprite.Documents;
 using MonoGame.Extended;
 
 namespace DF.Entities.Projectiles
@@ -15,8 +16,8 @@ namespace DF.Entities.Projectiles
             {
                 throw new Exception("This bullet can move only vertically, use bool flyDown to specify whether it should go up or down. targetPos shall be Vector2.Zero.");
             }
-            
-            this.sprite = Assets.animations["bullet_thin"];
+
+            this.sprite = Assets.asepriteToAnimation("bullet_thin");
             this.hitbox = new Collider(new RectangleF(position.X, position.Y, 2, 5));
             this.speed = 1f;
 

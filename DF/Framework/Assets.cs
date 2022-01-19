@@ -8,8 +8,7 @@ namespace DF.Framework
 {
     public class Assets
     {
-        public static Dictionary<string, AnimatedSprite> animations = new Dictionary<string, AnimatedSprite>();
-        private Dictionary<string, AsepriteDocument> aseprite = new Dictionary<string, AsepriteDocument>();
+        public static Dictionary<string, AsepriteDocument> aseprite = new Dictionary<string, AsepriteDocument>();
 
         private readonly ContentManager Content;
         public Assets(ContentManager contentManager)
@@ -27,16 +26,12 @@ namespace DF.Framework
                             Content.Load<AsepriteDocument>(file.Substring(0, file.Length - 4
                             )));
             }
-            
-            asepriteToAnimation();
+
         }
 
-        private void asepriteToAnimation()
+        public static AnimatedSprite asepriteToAnimation(string key)
         {
-            foreach (var ase in aseprite)
-            {
-                animations.Add(ase.Key, new AnimatedSprite(ase.Value));
-            }    
+            return new AnimatedSprite(aseprite[key]);
         }
         
     }

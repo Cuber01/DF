@@ -1,5 +1,3 @@
-using System.Linq;
-using System.Runtime.InteropServices;
 using DF.Content;
 using DF.Entities.Projectiles;
 using DF.Framework;
@@ -23,7 +21,7 @@ namespace DF.Entities.Mobs
             
             GameMain.collision.Insert(hitbox);
             
-            sprite = Assets.animations["alien_green2"];
+            sprite = Assets.asepriteToAnimation("alien_green2");
             sprite.Play("idle");
             
             setNewCourse();
@@ -77,10 +75,6 @@ namespace DF.Entities.Mobs
                             .OnEnd(tweenie => setNewCourse())
                     
                    );
-
-            // CubicIn - Accelerate, sudden stop
-            // QuadraticIn - Accelerate, slow down near end
-            // BackOut/ElasticOut - Start fast and back off
         }
 
 

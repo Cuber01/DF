@@ -1,3 +1,4 @@
+using DF.Entities.Projectiles;
 using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
@@ -20,7 +21,7 @@ namespace DF.Entities
             
             GameMain.collision.Insert(hitbox);
             
-            sprite = Assets.animations["ship"];
+            sprite = Assets.asepriteToAnimation("ship");
             sprite.Play("idle");
         }
         
@@ -80,6 +81,11 @@ namespace DF.Entities
                 {
                     velocity.X -= 1 * speed;
                 }
+            }
+            
+            if (Input.keyboardState.IsKeyDown(Keys.X))
+            {
+                GameMain.entities.Add(new BulletThin(Vector2.Zero, position, false));
             }
 
         }
