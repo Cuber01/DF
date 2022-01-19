@@ -1,3 +1,4 @@
+using DF.Arms;
 using DF.Entities.Projectiles;
 using DF.Framework;
 using DF.General;
@@ -9,7 +10,12 @@ namespace DF.Entities
 {
     public class Player : Entity
     {
-        private Collider hitbox;
+        private readonly Collider hitbox;
+        
+        private readonly Weapon weapon;
+        private readonly Vector2 tipOffset = new Vector2(3, -4);
+        private bool wantToShoot = false;
+
         private const float speed = 0.21f;
         private const float friction = 0.96f;
         private const float maxVelocity = 6;
@@ -17,10 +23,11 @@ namespace DF.Entities
         public Player(Vector2 position)
         {
             this.position = position;
+            this.weapon = new PlasmaCannon(position + tipOffset);
+            
             this.hitbox = new Collider(new RectangleF(position, new Size2(8, 8)));
-            
             GameMain.collision.Insert(hitbox);
-            
+
             sprite = Assets.asepriteToAnimation("ship");
             sprite.Play("idle");
         }
@@ -34,6 +41,7 @@ namespace DF.Entities
             updateSprite(gameTime);
             
             hitbox.update(position);
+            weapon.update(position + tipOffset, wantToShoot);
         }
 
         private void move()
@@ -83,10 +91,7 @@ namespace DF.Entities
                 }
             }
             
-            if (Input.keyboardState.IsKeyDown(Keys.X))
-            {
-                GameMain.entities.Add(new BulletThin(Vector2.Zero, position, false));
-            }
+            wantToShoot = Input.keyboardState.IsKeyDown(Keys.X);
 
         }
     }

@@ -2,7 +2,6 @@ using System;
 using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
-using MonoGame.Aseprite.Documents;
 using MonoGame.Extended;
 
 namespace DF.Entities.Projectiles
@@ -10,7 +9,7 @@ namespace DF.Entities.Projectiles
     public class BulletThin : Projectile
     {
         
-        public BulletThin(Vector2 targetPos, Vector2 position, bool flyDown) : base(targetPos, position)
+        public BulletThin(Vector2 targetPos, Vector2 position, bool flyDown, float speed = 1) : base(targetPos, position)
         {
             if (targetPos != Vector2.Zero)
             {
@@ -19,7 +18,7 @@ namespace DF.Entities.Projectiles
 
             this.sprite = Assets.asepriteToAnimation("bullet_thin");
             this.hitbox = new Collider(new RectangleF(position.X, position.Y, 2, 5));
-            this.speed = 1f;
+            this.speed = speed;
 
             setCourse(flyDown
                 ? new Vector2(position.X, position.Y += 999)
