@@ -1,5 +1,4 @@
 using DF.Framework;
-using DF.Framework.Input;
 using DF.General;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;

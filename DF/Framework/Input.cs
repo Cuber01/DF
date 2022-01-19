@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework.Input;
 
 // Input should be handled with event handle so we can rebing buttons instead of hardcoding them. The sad truth is, I don't want to rebind buttons.
-namespace DF.Framework.Input
+namespace DF.Framework
 {
     public static class Input
     {

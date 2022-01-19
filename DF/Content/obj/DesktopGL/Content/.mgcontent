@@ -19,6 +19,7 @@
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/asteroid7x7.ase</File>
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/bomb.ase</File>
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/bullet_bold.ase</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/bullet_thin.ase</File>
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/coin.ase</File>
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/double_bullet.ase</File>
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/heart.ase</File>
@@ -35,6 +36,7 @@
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/ufo1.ase</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

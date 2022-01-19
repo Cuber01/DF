@@ -3,9 +3,8 @@ using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
 using MonoGame.Extended;
-using MonoGame.Extended.Tweening;
 
-namespace DF.Entities
+namespace DF.Entities.Mobs
 {
     public class GreenAlien : Mob
     {
@@ -30,7 +29,7 @@ namespace DF.Entities
 
             if (simp)
             {
-                GameMain.entities.Add(new BulletBold(GameMain.player.position, position));
+                GameMain.entities.Add(new BulletThin(Vector2.Zero, position, false));
                 simp = false;
             }
             

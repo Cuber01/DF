@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using DF.Content;
 using DF.Entities;
+using DF.Entities.Mobs;
 using DF.Framework;
-using DF.Framework.Input;
 using DF.General;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -166,7 +166,7 @@ namespace DF
             {
                 entity.draw();
             }
-            
+
             player.draw();
 
             spriteBatch.End();

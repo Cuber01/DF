@@ -55,3 +55,4 @@
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Collisions.dll
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Tweening.dll
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/bullet_thin.xnb
