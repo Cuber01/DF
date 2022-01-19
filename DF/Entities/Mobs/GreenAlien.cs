@@ -1,13 +1,21 @@
+using System.Linq;
+using System.Runtime.InteropServices;
+using DF.Content;
 using DF.Entities.Projectiles;
 using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
 using MonoGame.Extended;
+using MonoGame.Extended.Tweening;
 
 namespace DF.Entities.Mobs
 {
     public class GreenAlien : Mob
     {
+        private Vector2 destination;
+        private const int offsetX = 5;
+        private const int downYPerMove = 3;
+        
         public GreenAlien(Vector2 position)
         {
             this.position = position;
@@ -18,7 +26,7 @@ namespace DF.Entities.Mobs
             sprite = Assets.animations["alien_green2"];
             sprite.Play("idle");
             
-            move();
+            setNewCourse();
         }
 
         private bool simp = true;
@@ -29,21 +37,52 @@ namespace DF.Entities.Mobs
 
             if (simp)
             {
-                GameMain.entities.Add(new BulletThin(Vector2.Zero, position, false));
+                GameMain.entities.Add(new BulletBold(GameMain.player.position, position));
                 simp = false;
             }
             
         }
 
-        private void move()
+        private void setNewCourse()
         {
-            // GameMain.tweener.TweenTo(target: this, expression: me => this.position, toValue: new Vector2(100, 100), duration: 2, delay: 1)
-            //     .Easing(EasingFunctions.ElasticOut);
+            // Am I on the right side of the screen?
+            if (position.X >= GConstants.canvasWidth/2)
+            {
+                // Move to the left
+                (destination.X, destination.Y) = (0 + offsetX, position.Y += downYPerMove);
+            }
+            else
+            {
+                // Move to the right
+                (destination.X, destination.Y) = (GConstants.canvasWidth - offsetX - sprite.Width, position.Y += downYPerMove);
+            }
             
+            move(new Vector2(destination.X, position.Y));
+            
+        }
+
+        private void move(Vector2 newPosition)
+        {
+            // 1. Go to newPosition.X
+            // 2. Go to newPosition.Y
+            // 3. Set a new destination
+            // 4. Repeat
+            
+            GameMain.tweener.TweenTo(target: this, expression: me => this.position, toValue: new Vector2(newPosition.X, position.Y), duration: 3, delay: 0.1f)
+                .Easing(EasingFunctions.QuadraticIn)
+                .OnEnd(tween =>
+                    
+                        GameMain.tweener.TweenTo(target: this, expression: me => this.position, toValue: new Vector2(newPosition.X, position.Y), duration: 0.00000001f, delay: 0.1f)
+                            .Easing(EasingFunctions.Linear)
+                            .OnEnd(tweenie => setNewCourse())
+                    
+                   );
+
             // CubicIn - Accelerate, sudden stop
             // QuadraticIn - Accelerate, slow down near end
             // BackOut/ElasticOut - Start fast and back off
         }
+
 
     }
 }
