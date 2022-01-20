@@ -9,9 +9,10 @@ namespace DF.Entities.Projectiles
 {
     public class Projectile : Entity
     {
+        protected int lifetime = 300;
         protected float speed = 2;
         protected int damage = 1;
-
+        
         protected Projectile(Vector2 targetPos, Vector2 position, Team team)
         {
             this.position = position;
@@ -27,6 +28,30 @@ namespace DF.Entities.Projectiles
             this.velocity.Y = (target.Y - position.Y) / dist;
         }
 
+        public override void update(GameTime gameTime)
+        {
+            move();
+            
+            updateLifetime();
+            updateSprite(gameTime);
+            updateBounds(position);
+        }
+
+        private void updateLifetime()
+        {
+            lifetime--;
+            
+            if(lifetime <= 0)
+            {
+                die();
+            }
+        }
+
+        private void move()
+        {
+            position += velocity * speed;
+        }
+        
         public override void OnCollision(CollisionEventArgs collisionInfo)
         {
             if (collisionInfo.Other is Mob mob)
@@ -43,17 +68,6 @@ namespace DF.Entities.Projectiles
             // Farewell!
             GameMain.entities.Remove(this);
             GameMain.collision.Remove(this);
-        }
-
-        public override void update(GameTime gameTime)
-        {
-            updateSprite(gameTime);
-            updateBounds(position);
-        }
-
-        protected void move()
-        {
-            position += velocity * speed;
         }
         
     }

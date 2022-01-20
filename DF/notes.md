@@ -1,6 +1,5 @@
 todo
 
-- Bullets should die after leaving the screen
 
 good free music 
 

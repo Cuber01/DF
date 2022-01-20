@@ -17,12 +17,6 @@ namespace DF.Entities.Projectiles
             
             setCourse(targetPos);
         }
-
-        public override void update(GameTime gameTime)
-        {
-            move();
-
-            base.update(gameTime);
-        }
+        
     }
 }

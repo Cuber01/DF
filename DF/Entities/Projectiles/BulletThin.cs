@@ -27,11 +27,5 @@ namespace DF.Entities.Projectiles
                 : new Vector2(position.X, position.Y -= 999));
         }
 
-        public override void update(GameTime gameTime)
-        {
-            move();
-            
-            base.update(gameTime);
-        }
     }
 }
