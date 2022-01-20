@@ -24,8 +24,8 @@ namespace DF.Entities
             this.position = position;
             this.weapon = new PlasmaCannon(position + tipOffset);
             
-            this.hitbox = new Collider(new RectangleF(position, new Size2(8, 8)));
-            GameMain.collision.Insert(hitbox);
+            this.Bounds = new RectangleF(position, new Size2(8, 8));
+            GameMain.collision.Insert(this);
 
             sprite = Assets.asepriteToAnimation("ship");
             sprite.Play("idle");
@@ -36,11 +36,9 @@ namespace DF.Entities
             reactToInput();
             applyFriction();
             move();
-            
-            updateSprite(gameTime);
-            
-            hitbox.update(position);
+
             weapon.update(position + tipOffset, wantToShoot);
+            base.update(gameTime);
         }
 
         private void move()

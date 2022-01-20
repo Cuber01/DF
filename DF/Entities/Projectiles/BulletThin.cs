@@ -17,9 +17,11 @@ namespace DF.Entities.Projectiles
             }
 
             this.sprite = Assets.asepriteToAnimation("bullet_thin");
-            this.hitbox = new Collider(new RectangleF(position.X, position.Y, 2, 5));
             this.speed = speed;
 
+            this.Bounds = new RectangleF(position.X, position.Y, 2, 5);
+            GameMain.collision.Insert(this);
+            
             setCourse(flyDown
                 ? new Vector2(position.X, position.Y += 999)
                 : new Vector2(position.X, position.Y -= 999));
@@ -28,7 +30,8 @@ namespace DF.Entities.Projectiles
         public override void update(GameTime gameTime)
         {
             move();
-            updateSprite(gameTime);
+            
+            base.update(gameTime);
         }
     }
 }

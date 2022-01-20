@@ -1,5 +1,4 @@
 using DF.Framework;
-using DF.General;
 using Microsoft.Xna.Framework;
 using MonoGame.Extended;
 
@@ -11,7 +10,8 @@ namespace DF.Entities.Projectiles
         public BulletBold(Vector2 targetPos, Vector2 position, float speed = 0.2f) : base(targetPos, position)
         {
             this.sprite = Assets.asepriteToAnimation("bullet_bold");
-            this.hitbox = new Collider(new RectangleF(position.X, position.Y, 4, 4));
+            this.Bounds = new RectangleF(position.X, position.Y, 4, 4);
+            GameMain.collision.Insert(this);
             this.speed = speed;
             
             setCourse(targetPos);
@@ -20,7 +20,8 @@ namespace DF.Entities.Projectiles
         public override void update(GameTime gameTime)
         {
             move();
-            updateSprite(gameTime);
+
+            base.update(gameTime);
         }
     }
 }

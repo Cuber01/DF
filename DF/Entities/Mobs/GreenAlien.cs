@@ -16,9 +16,9 @@ namespace DF.Entities.Mobs
         public GreenAlien(Vector2 position)
         {
             this.position = position;
-            this.hitbox = new Collider(new RectangleF(position, new Size2(8, 8)));
             
-            GameMain.collision.Insert(hitbox);
+            this.Bounds = new RectangleF(position, new Size2(8, 8));
+            GameMain.collision.Insert(this);
             
             sprite = Assets.asepriteToAnimation("alien_green2");
             sprite.Play("idle");
@@ -29,15 +29,13 @@ namespace DF.Entities.Mobs
         private bool simp = true;
         public override void update(GameTime gameTime)
         {
-            updateSprite(gameTime);
-            hitbox.update(position);
-
             if (simp)
             {
                 GameMain.entities.Add(new BulletBold(GameMain.player.position, position));
                 simp = false;
             }
             
+            base.update(gameTime);
         }
 
         private void setNewCourse()
