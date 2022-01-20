@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DF.Content;
 using DF.Entities;
 using DF.Entities.Mobs;
 using DF.Framework;

@@ -1,4 +1,5 @@
 using DF.Arms;
+using DF.Entities.Mobs;
 using DF.Entities.Projectiles;
 using DF.Framework;
 using DF.General;
@@ -8,10 +9,8 @@ using MonoGame.Extended;
 
 namespace DF.Entities
 {
-    public class Player : Entity
+    public class Player : Mob
     {
-        private readonly Collider hitbox;
-        
         private readonly Weapon weapon;
         private readonly Vector2 tipOffset = new Vector2(3, -4);
         private bool wantToShoot = false;

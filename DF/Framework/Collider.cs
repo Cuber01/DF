@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using MonoGame.Extended;
 using MonoGame.Extended.Collisions;
 
-namespace DF.General
+namespace DF.Framework
 {
     
     public class Collider : ICollisionActor

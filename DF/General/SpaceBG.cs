@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using DF.Content;
 using DF.Framework;
 using Microsoft.Xna.Framework;
 

@@ -1,4 +1,4 @@
-namespace DF.Content
+namespace DF
 {
     public class GConstants
     {
