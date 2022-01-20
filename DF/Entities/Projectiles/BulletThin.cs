@@ -9,7 +9,7 @@ namespace DF.Entities.Projectiles
     public class BulletThin : Projectile
     {
         
-        public BulletThin(Vector2 targetPos, Vector2 position, bool flyDown, float speed = 1) : base(targetPos, position)
+        public BulletThin(Vector2 targetPos, Vector2 position, Team team, bool flyDown, float speed = 1) : base(targetPos, position, team)
         {
             if (targetPos != Vector2.Zero)
             {

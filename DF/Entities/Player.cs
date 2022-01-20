@@ -22,7 +22,9 @@ namespace DF.Entities
         public Player(Vector2 position)
         {
             this.position = position;
-            this.weapon = new PlasmaCannon(position + tipOffset);
+            this.team = Team.allies;
+            
+            this.weapon = new PlasmaCannon(position + tipOffset, team);
             
             this.Bounds = new RectangleF(position, new Size2(8, 8));
             GameMain.collision.Insert(this);

@@ -1,5 +1,5 @@
 using System;
-using System.Runtime.ConstrainedExecution;
+using DF.General;
 using Microsoft.Xna.Framework;
 using MonoGame.Aseprite.Graphics;
 using MonoGame.Extended;
@@ -7,9 +7,11 @@ using MonoGame.Extended.Collisions;
 
 namespace DF.Entities
 {
+    // Entity is defined as an object with a sprite and a collider.
     public class Entity : ICollisionActor
     {
-        public IShapeF Bounds { get; set; }
+        public IShapeF Bounds { get; protected set; }
+        public Team team;
         
         protected AnimatedSprite sprite;
         public Vector2 position;
@@ -40,7 +42,7 @@ namespace DF.Entities
         
         public virtual void OnCollision(CollisionEventArgs collisionInfo)
         {
-            Console.WriteLine("base");    
+ 
         }
 
         

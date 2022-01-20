@@ -16,6 +16,7 @@ namespace DF.Entities.Mobs
         public GreenAlien(Vector2 position)
         {
             this.position = position;
+            this.team = Team.enemies;
             
             this.Bounds = new RectangleF(position, new Size2(8, 8));
             GameMain.collision.Insert(this);
@@ -31,7 +32,7 @@ namespace DF.Entities.Mobs
         {
             if (simp)
             {
-                GameMain.entities.Add(new BulletBold(GameMain.player.position, position));
+                GameMain.entities.Add(new BulletBold(GameMain.player.position, position, team));
                 simp = false;
             }
             
