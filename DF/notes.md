@@ -1,3 +1,7 @@
+todo
+
+- Bullets should die after leaving the screen
+
 good free music 
 
 https://www.chosic.com/download-audio/29766/

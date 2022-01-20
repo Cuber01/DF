@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DF.Framework;
 using Microsoft.Xna.Framework;
@@ -8,6 +9,7 @@ namespace DF.General
     {
         // TODO we never remove stars from this list...
         private readonly List<Star> stars = new List<Star>();
+        private readonly List<Star> starsToBeRemoved = new List<Star>();
 
         private const int minVelocity = 1;
         private const int maxVelocity = 4;
@@ -34,10 +36,22 @@ namespace DF.General
             {
                 var star_tmp = stars[i];
 
+                if (star_tmp.position.Y > GConstants.canvasHeight)
+                {
+                    starsToBeRemoved.Add(stars[i]);
+                    continue;
+                }
+
                 star_tmp.position.Y += star_tmp.velocity;
 
                 stars[i] = star_tmp;    
             }
+
+            foreach (var star in starsToBeRemoved)
+            {
+                stars.Remove(star);
+            }
+            starsToBeRemoved.Clear();
             
             
         }
