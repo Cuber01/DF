@@ -29,10 +29,10 @@ namespace DF.Entities.Projectiles
 
         public override void OnCollision(CollisionEventArgs collisionInfo)
         {
-            Console.WriteLine("cringe!!");
-            
             if (collisionInfo.Other is Mob mob)
             {
+                if(mob.team == team) return;
+                
                 mob.takeDamage(damage);
                 die();
             }
@@ -42,6 +42,7 @@ namespace DF.Entities.Projectiles
         {
             // Farewell!
             GameMain.entities.Remove(this);
+            GameMain.collision.Remove(this);
         }
 
         public override void update(GameTime gameTime)

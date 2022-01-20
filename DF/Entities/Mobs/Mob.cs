@@ -15,7 +15,7 @@ namespace DF.Entities.Mobs
 
         private void checkDeath()
         {
-            if (hitpoints < 0)
+            if (hitpoints <= 0)
             {
                 die();
             }
@@ -25,6 +25,7 @@ namespace DF.Entities.Mobs
         {
             // Goodbye!
             GameMain.entities.Remove(this);
+            GameMain.collision.Remove(this);
         }
         
         public override void update(GameTime gameTime)
