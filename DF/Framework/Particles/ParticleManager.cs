@@ -9,7 +9,10 @@ namespace DF.Framework
 
         public static void addParticles(List<Particle> newParts)
         {
-            particles.Concat(newParts);
+            foreach (var part in newParts)
+            {
+                particles.Add(part);
+            }
         }
 
         public static void update()

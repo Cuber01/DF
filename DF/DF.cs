@@ -71,6 +71,22 @@ namespace DF
             player = new Player(new Vector2(100, 100));
             
             entities.Add(new GreenAlien(new Vector2(50, 50)));
+            
+            ParticleManager.addParticles(
+            new List<Particle>() {
+                    new Particle(
+                        new particleArgs(
+                                    new Vector2(10,10),
+                                    new Vector2(0, 0),
+                                    0.99f,
+                        100,
+                                     10,
+                                           palette.red
+            
+                                    )
+                        )
+            }
+            );
 
         }
 
@@ -141,6 +157,8 @@ namespace DF
             Input.update();
             
             spaceBG.update();
+            
+            ParticleManager.update();
 
             player.update(gameTime);
                 
@@ -162,6 +180,8 @@ namespace DF
             
             spaceBG.draw();
 
+            ParticleManager.draw();
+            
             foreach (var entity in entities)
             {
                 entity.draw();
