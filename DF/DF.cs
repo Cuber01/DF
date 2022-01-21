@@ -66,6 +66,7 @@ namespace DF
         {
             Assets assets = new Assets(Content);
             assets.loadTextures("/assets/images/");
+            assets.loadShaders("/shaders/");
 
             // I really wanna keep my player outside of the main update loop. This sacrifice should save a lot of dirty code.
             player = new Player(new Vector2(100, 100));
@@ -145,6 +146,7 @@ namespace DF
             player.update(gameTime);
                 
             collision.Update(gameTime);
+            
             tweener.Update(gameTime.GetElapsedSeconds());
 
             for (int i = 0; i <= entities.Count - 1; i++)
@@ -157,7 +159,7 @@ namespace DF
 
         private void drawGame()
         {
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: scaleMatrix);
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, null, null, Assets.shaders["whiteSprite"], scaleMatrix);
             
             spaceBG.draw();
 
@@ -169,6 +171,7 @@ namespace DF
             player.draw();
 
             spriteBatch.End();
+            
         }
 
         private void drawGameWon()

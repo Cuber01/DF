@@ -22,6 +22,10 @@
 /home/cubeq/RiderProjects/DF/DF/obj/Debug/netcoreapp3.1/DF.pdb
 /home/cubeq/RiderProjects/DF/DF/obj/Debug/netcoreapp3.1/DF.genruntimeconfig.cache
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Aseprite.dll
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.dll
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Collisions.dll
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Tweening.dll
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/alien_blue1.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/alien_green1.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/alien_green2.xnb
@@ -37,6 +41,7 @@
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/asteroid7x7.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/bomb.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/bullet_bold.xnb
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/bullet_thin.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/coin.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/double_bullet.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/heart.xnb
@@ -51,8 +56,4 @@
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/small_bullet.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/triple_bullet.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/ufo1.xnb
-/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.dll
-/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Collisions.dll
-/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
-/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/MonoGame.Extended.Tweening.dll
-/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/bullet_thin.xnb
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/shaders/whiteSprite.xnb
