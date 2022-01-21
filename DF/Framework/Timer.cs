@@ -5,8 +5,8 @@ namespace DF.Framework
         private int timer1;
         private int timer2;
 
-        private int maxTimer1;
-        private int maxTimer2;
+        private readonly int maxTimer1;
+        private readonly int maxTimer2;
         
         public bool oneIsRunning = true;
 

@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Extended;
 
 namespace DF.Framework
 {
@@ -14,14 +15,11 @@ namespace DF.Framework
 		{
 			this.spriteBatch = spriteBatch;
 			this.graphicsDevice = graphicsDevice;
-
-			pixel = new Texture2D(this.graphicsDevice, 1, 1);
-			pixel.SetData(new[] { Color.White });
 		}
 		
 		public void spixel(int x, int y, Color color)
 		{
-			spriteBatch.Draw(pixel, new Vector2(x, y), color);
+			spriteBatch.DrawPoint(x, y, color);
 		}
 
 		public void circle(int x, int y, int r, Color color)
