@@ -22,11 +22,35 @@ namespace DF.Framework
 			spriteBatch.DrawPoint(x, y, color);
 		}
 
-		public void circle(int x, int y, int r, Color color)
+		public void circfill(int x, int y, int r,  Color c)
 		{
-			for (double i = 0; i < 2 * Math.PI; i = i + 0.1)
-			{
-				spixel((int)(x + r * Math.Sin(i)), (int)(y + r * Math.Cos(i)), color);
+
+			int offset_x = 0;
+			int offset_y = r;
+
+			int d = r - 1;
+
+			while (offset_y >= offset_x) {
+
+				bersenhamLine(x - offset_y, y + offset_x, x + offset_y, y + offset_x, c);
+				bersenhamLine(x - offset_x, y + offset_y, x + offset_x, y + offset_y, c);
+				bersenhamLine(x - offset_x, y - offset_y, x + offset_x, y - offset_y, c);
+				bersenhamLine(x - offset_y, y - offset_x, x + offset_y, y - offset_x, c);
+
+				if (d >= 2*offset_x) {
+					d -= 2*offset_x + 1;
+					offset_x +=1;
+				}
+				else if (d < 2 * (r - offset_y)) {
+					d += 2 * offset_y - 1;
+					offset_y -= 1;
+				}
+				else {
+					d += 2 * (offset_y - offset_x - 1);
+					offset_y -= 1;
+					offset_x += 1;
+				}
+    
 			}
 		}
 		
@@ -71,7 +95,8 @@ namespace DF.Framework
 
 
 		}
-
+		
+		
 		public void bersenhamLine(int x1, int y1, int x2, int y2, Color color)
 		{
 			int x, y, xe, ye, i;
@@ -168,6 +193,8 @@ namespace DF.Framework
 				}
 			}
 		}
+
+
 
 		public void drawRectangle(Rectangle rect, Color color, bool filled)
 		{
