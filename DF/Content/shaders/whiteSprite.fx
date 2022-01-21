@@ -24,12 +24,10 @@ struct VertexShaderOutput
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-    float4 texelColorFromLoadedImage = tex2D(SpriteTextureSampler, input.TextureCoordinates);
+    float4 texColor = tex2D(SpriteTextureSampler, input.TextureCoordinates);
+    float4 blendedColor = texColor * input.Color;
 
-    float4 theColorWeGaveToSpriteBatchDrawAsaParameter = input.Color;
-    float4 blendedColor = texelColorFromLoadedImage * theColorWeGaveToSpriteBatchDrawAsaParameter;
-
-    blendedColor.rgb = blendedColor.rgb * 0.5f + 0.5f; 
+    blendedColor.rgb = 1.0f; 
     return blendedColor;
 }
 
