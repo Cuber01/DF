@@ -25,18 +25,30 @@ namespace DF.Framework
 		public void circfill(int x, int y, int r,  Color c)
 		{
 
+			// I am sorry
+			if (r == 1)
+			{
+				spixel(x, y, c);
+				spixel(x+1, y, c);
+				spixel(x-1, y, c);
+				spixel(x, y+1, c);
+				spixel(x, y-1, c);
+
+				return;
+			}
+			
 			int offset_x = 0;
 			int offset_y = r;
-
+			
 			int d = r - 1;
-
+			
 			while (offset_y >= offset_x) {
 
 				bersenhamLine(x - offset_y, y + offset_x, x + offset_y, y + offset_x, c);
 				bersenhamLine(x - offset_x, y + offset_y, x + offset_x, y + offset_y, c);
 				bersenhamLine(x - offset_x, y - offset_y, x + offset_x, y - offset_y, c);
 				bersenhamLine(x - offset_y, y - offset_x, x + offset_y, y - offset_x, c);
-
+			
 				if (d >= 2*offset_x) {
 					d -= 2*offset_x + 1;
 					offset_x +=1;
@@ -52,6 +64,7 @@ namespace DF.Framework
 				}
     
 			}
+
 		}
 		
 		private void straightLine(int x1, int y1, int x2, int y2, Color color)
