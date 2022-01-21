@@ -6,12 +6,12 @@ namespace DF.Entities.Mobs
     // Mob is defined as a killable Entity.
     public class Mob : Entity
     {
-        private int hitpoints = 5;
+        protected int hitpoints = 5;
 
-        private int blinkTimer;
+        protected int blinkTimer;
         private const int maxBlinkTimer = 8;
 
-        public void takeDamage(int damage)
+        public virtual void takeDamage(int damage)
         {
             hitpoints -= damage;
             blinkTimer = maxBlinkTimer;
@@ -19,7 +19,7 @@ namespace DF.Entities.Mobs
             checkDeath();
         }
 
-        private void checkDeath()
+        protected void checkDeath()
         {
             if (hitpoints <= 0)
             {
@@ -41,7 +41,7 @@ namespace DF.Entities.Mobs
             updateBounds(position); 
         }
 
-        private void handleBlink()
+        protected virtual void handleBlink()
         {
             if (blinkTimer > 0)
             {

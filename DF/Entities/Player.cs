@@ -19,6 +19,14 @@ namespace DF.Entities
         private const float friction = 0.96f;
         private const float maxVelocity = 6;
 
+        private int invincibilityTime;
+        private const int maxInvincibilityTime = 250;
+
+        private const int maxBlinkDelay = 25;
+        private const int maxBlinkTimer = 25;
+
+        private readonly Timer blinkTimer = new Timer(maxBlinkTimer, maxBlinkDelay);
+
         public Player(Vector2 position)
         {
             this.position = position;
@@ -40,7 +48,8 @@ namespace DF.Entities
             reactToInput();
             applyFriction();
             move();
-
+            
+            
             weapon.update(position + tipOffset, wantToShoot);
             base.update(gameTime);
         }
@@ -94,6 +103,38 @@ namespace DF.Entities
             
             wantToShoot = Input.keyboardState.IsKeyDown(Keys.X);
 
+        }
+
+        public override void takeDamage(int damage)
+        {
+            if (invincibilityTime > 0) return;
+            
+            hitpoints -= damage;
+
+            invincibilityTime = maxInvincibilityTime;
+            
+            checkDeath();
+        }
+        
+        protected override void handleBlink()
+        {
+            if (invincibilityTime <= 0)
+            {
+                effect = null;
+                return;
+            }
+
+            blinkTimer.update();
+            invincibilityTime--;
+
+            if (blinkTimer.oneIsRunning)
+            {
+                effect ??= Assets.shaders["blink"];
+            }
+            else
+            {
+                effect = null;
+            }
         }
     }
 }
