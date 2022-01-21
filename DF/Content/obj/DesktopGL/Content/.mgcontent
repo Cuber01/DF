@@ -34,7 +34,7 @@
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/small_bullet.ase</File>
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/triple_bullet.ase</File>
     <File>/home/cubeq/RiderProjects/DF/DF/Content/assets/images/ufo1.ase</File>
-    <File>/home/cubeq/RiderProjects/DF/DF/Content/shaders/whiteSprite.fx</File>
+    <File>/home/cubeq/RiderProjects/DF/DF/Content/shaders/blink.fx</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

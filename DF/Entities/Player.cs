@@ -32,7 +32,7 @@ namespace DF.Entities
             sprite = Assets.asepriteToAnimation("ship");
             sprite.Play("idle");
 
-            effect = Assets.shaders["whiteSprite"];
+            effect = Assets.shaders["blink"];
         }
         
         public override void update(GameTime gameTime)

@@ -56,4 +56,4 @@
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/small_bullet.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/triple_bullet.xnb
 /home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/assets/images/ufo1.xnb
-/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/shaders/whiteSprite.xnb
+/home/cubeq/RiderProjects/DF/DF/bin/Debug/netcoreapp3.1/Content/shaders/blink.xnb

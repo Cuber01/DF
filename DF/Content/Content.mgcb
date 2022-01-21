@@ -374,9 +374,9 @@
 /processorParam:InnerPadding=0
 /build:assets/images/ufo1.ase
 
-#begin shaders/whiteSprite.fx
+#begin shaders/blink.fx
 /importer:EffectImporter
 /processor:EffectProcessor
 /processorParam:DebugMode=Auto
-/build:shaders/whiteSprite.fx
+/build:shaders/blink.fx
 
