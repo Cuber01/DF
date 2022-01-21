@@ -7,11 +7,13 @@ namespace DF.Framework
     {
         private Vector2 position;
         private Vector2 velocity;
-        private float friction;
-
-        private int framesUntilSmaller;
+        private readonly float friction;
+        
         private int radius;
-        private int color;
+        private readonly Color color;
+        
+        private int maxFramesUntilSmaller;
+        private int framesUntilSmaller;
         
         public Particle(particleArgs args)
         {
@@ -19,32 +21,42 @@ namespace DF.Framework
             this.velocity = args.velocity;
             this.friction = args.friction;
 
-            this.framesUntilSmaller = args.framesUntilSmaller;
+            this.maxFramesUntilSmaller = args.maxFramesUntilSmaller;
             this.radius = args.radius;
             this.color = args.color;
         }
 
         public void update()
         {
-            
+            position += velocity;
+            velocity *= friction;
+
+            if (framesUntilSmaller > 0)
+            {
+                framesUntilSmaller--;
+                return;
+            }
+
+            framesUntilSmaller = maxFramesUntilSmaller;
+            radius--;
         }
 
         public void draw()
         {
-            
+            GameMain.draw.circfill((int)position.X, (int)position.Y, radius, color);
         }
         
     }
     
     public struct particleArgs
     {
-        public particleArgs(Vector2 position, Vector2 velocity, float friction, int framesUntilSmaller, int radius, int color)
+        public particleArgs(Vector2 position, Vector2 velocity, float friction, int maxFramesUntilSmaller, int radius, Color color)
         {
             this.position = position;
             this.velocity = velocity;
             this.friction = friction;
 
-            this.framesUntilSmaller = framesUntilSmaller;
+            this.maxFramesUntilSmaller = maxFramesUntilSmaller;
             this.radius = radius;
             this.color = color;
         }
@@ -53,8 +65,8 @@ namespace DF.Framework
         public Vector2 velocity;
         public float friction;
 
-        public int framesUntilSmaller;
+        public int maxFramesUntilSmaller;
         public int radius;
-        public int color;
+        public Color color;
     }
 }
