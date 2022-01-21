@@ -9,7 +9,7 @@ namespace DF.Entities.Projectiles
 {
     public class Projectile : Entity
     {
-        protected int lifetime = 300;
+        protected int lifetime = 1000;
         protected float speed = 2;
         protected int damage = 1;
         
