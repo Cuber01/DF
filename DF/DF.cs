@@ -19,8 +19,7 @@ namespace DF
         private static GameState gameState = GameState.playing;
         public static List<Entity> entities = new List<Entity>();
         
-        private readonly Matrix scaleMatrix = Matrix.CreateScale(GConstants.scale, GConstants.scale, 1.0f);
-        
+
         private readonly GraphicsDeviceManager graphics;
         public static CollisionComponent collision;
         public static Tweener tweener;
@@ -38,7 +37,7 @@ namespace DF
             graphics = new GraphicsDeviceManager(this);
             tweener = new Tweener();
             
-            collision = new CollisionComponent(new RectangleF(0,0, GConstants.canvasWidth, GConstants.canvasHeight));
+            collision = new CollisionComponent(new RectangleF(0,0, GConst.canvasWidth, GConst.canvasHeight));
             
             Content.RootDirectory = "Content";
             IsMouseVisible = false;
@@ -46,8 +45,8 @@ namespace DF
 
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = GConstants.windowWidth;
-            graphics.PreferredBackBufferHeight = GConstants.windowHeight;
+            graphics.PreferredBackBufferWidth = GConst.windowWidth;
+            graphics.PreferredBackBufferHeight = GConst.windowHeight;
             graphics.ApplyChanges();
             
             // Cap at 60fps
@@ -159,7 +158,7 @@ namespace DF
 
         private void drawGame()
         {
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.PointClamp, null, null, Assets.shaders["whiteSprite"], scaleMatrix);
+            spriteBatch.Begin(GConst.dB.spriteSortMode, GConst.dB.blendState, GConst.dB.samplerState, GConst.dB.depthStencilState, GConst.dB.rasterizerState, GConst.dB.effect, GConst.dB.transformMatrix);
             
             spaceBG.draw();
 

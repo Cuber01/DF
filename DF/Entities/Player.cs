@@ -31,6 +31,8 @@ namespace DF.Entities
 
             sprite = Assets.asepriteToAnimation("ship");
             sprite.Play("idle");
+
+            effect = Assets.shaders["whiteSprite"];
         }
         
         public override void update(GameTime gameTime)

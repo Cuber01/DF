@@ -22,6 +22,7 @@ namespace DF.Entities.Mobs
             GameMain.collision.Insert(this);
             
             sprite = Assets.asepriteToAnimation("alien_green2");
+
             sprite.Play("idle");
             
             setNewCourse();
@@ -42,7 +43,7 @@ namespace DF.Entities.Mobs
         private void setNewCourse()
         {
             // Am I on the right side of the screen?
-            if (position.X >= GConstants.canvasWidth/2)
+            if (position.X >= GConst.canvasWidth/2)
             {
                 // Move to the left
                 (destination.X, destination.Y) = (0 + offsetX, position.Y += downYPerMove);
@@ -50,7 +51,7 @@ namespace DF.Entities.Mobs
             else
             {
                 // Move to the right
-                (destination.X, destination.Y) = (GConstants.canvasWidth - offsetX - sprite.Width, position.Y += downYPerMove);
+                (destination.X, destination.Y) = (GConst.canvasWidth - offsetX - sprite.Width, position.Y += downYPerMove);
             }
             
             move(new Vector2(destination.X, position.Y));

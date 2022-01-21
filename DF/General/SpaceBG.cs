@@ -22,7 +22,7 @@ namespace DF.General
         
         public void update()
         {
-            for (int i = 0; i <= GConstants.canvasWidth; i++)
+            for (int i = 0; i <= GConst.canvasWidth; i++)
             {
                 
                 if (Util.randomBool(0.999f))
@@ -36,7 +36,7 @@ namespace DF.General
             {
                 var star_tmp = stars[i];
 
-                if (star_tmp.position.Y > GConstants.canvasHeight)
+                if (star_tmp.position.Y > GConst.canvasHeight)
                 {
                     starsToBeRemoved.Add(stars[i]);
                     continue;
