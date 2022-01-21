@@ -161,9 +161,7 @@ namespace DF
             spriteBatch.Begin(GConst.dB.spriteSortMode, GConst.dB.blendState, GConst.dB.samplerState, GConst.dB.depthStencilState, GConst.dB.rasterizerState, GConst.dB.effect, GConst.dB.transformMatrix);
             
             spaceBG.draw();
-            
-            draw.circfill(10, 10, 8, Color.Aqua);
-            
+
             foreach (var entity in entities)
             {
                 entity.draw();
