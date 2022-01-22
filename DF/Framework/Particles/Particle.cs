@@ -8,8 +8,8 @@ namespace DF.Framework
         private Vector2 position;
         private Vector2 velocity;
         private readonly float friction;
-        
-        private int radius;
+
+        public int radius;
         private readonly Color color;
         
         private int maxFramesUntilSmaller;

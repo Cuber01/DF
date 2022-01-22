@@ -17,10 +17,18 @@ namespace DF.Framework
 
         public static void update()
         {
-            foreach (var part in particles)
+            
+            for (int i = 0; i >= 0; i++)
             {
-                part.update();
+                if (particles[i].radius < 0)
+                {
+                    particles.Remove(particles[i]);
+                    continue;
+                }
+                
+                particles[i].update();
             }
+            
         }
 
         public static void draw()
