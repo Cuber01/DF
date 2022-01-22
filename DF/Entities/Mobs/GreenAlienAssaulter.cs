@@ -10,8 +10,6 @@ namespace DF.Entities.Mobs
 {
     public class GreenAlienAssaulter : Mob
     {
-        private Vector2 velocity;
-
         private readonly Vector2 tipOffset = new Vector2(3, 7);
 
         private const int maxShootDelay = 300;

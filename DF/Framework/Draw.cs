@@ -7,7 +7,6 @@ namespace DF.Framework
 {
 	public class DrawUtils
 	{
-		private static Texture2D pixel;
 		private readonly GraphicsDevice graphicsDevice;
 		private readonly SpriteBatch spriteBatch;
 

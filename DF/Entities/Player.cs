@@ -25,7 +25,7 @@ namespace DF.Entities
         private const int maxBlinkDelay = 25;
         private const int maxBlinkTimer = 25;
 
-        private readonly Timer blinkTimer = new Timer(maxBlinkTimer, maxBlinkDelay);
+        private new readonly Timer blinkTimer = new Timer(maxBlinkTimer, maxBlinkDelay);
 
         public Player(Vector2 position)
         {
