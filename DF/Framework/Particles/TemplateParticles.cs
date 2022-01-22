@@ -6,19 +6,6 @@ namespace DF.Framework.Particles
 {
     public static class TemplateParticles
     {
-
-        public static poofArgs deathEffect = new poofArgs(new Vector2(62, 62),
-            10,
-            10,
-            0,
-            1,
-            0.7f,
-            3,
-            5,
-            7,
-            Color.MonoGameOrange,
-            new List<Color>() { palette.red, palette.dark_purple }
-        );
         
 
         public static void createPoofEffect(    Vector2 position,           // Initial position of the particle system
@@ -103,6 +90,19 @@ namespace DF.Framework.Particles
             public List<Color> colors;
         
         }
+        
+        public static poofArgs deathEffect = new poofArgs(new Vector2(62, 62),
+            8,
+            8,
+            0,
+            1,
+            0.7f,
+            3,
+            5,
+            7,
+            Color.MonoGameOrange,
+            new List<Color>() { palette.red, palette.dark_purple }
+        );
         
     }
 }

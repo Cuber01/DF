@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using DF.Framework;
+using DF.Framework.Particles;
 using Microsoft.Xna.Framework;
 
 namespace DF.Entities.Mobs
@@ -7,6 +9,12 @@ namespace DF.Entities.Mobs
     public class Mob : Entity
     {
         protected int hitpoints = 5;
+
+        protected List<Color> bloodColor = new List<Color>()
+        {
+            palette.green,
+            palette.dark_green
+        };
 
         protected int blinkTimer;
         private const int maxBlinkTimer = 8;
@@ -29,6 +37,8 @@ namespace DF.Entities.Mobs
 
         private void die()
         {
+            initDeathEffect();
+            
             // Goodbye!
             GameMain.entities.Remove(this);
             GameMain.collision.Remove(this);
@@ -52,6 +62,23 @@ namespace DF.Entities.Mobs
             }
 
             effect = null;
+        }
+
+        private void initDeathEffect()
+        {
+            TemplateParticles.createPoofEffect(
+                position,
+                TemplateParticles.deathEffect.range,
+                TemplateParticles.deathEffect.amount,
+                TemplateParticles.deathEffect.minVelocity,
+                TemplateParticles.deathEffect.maxVelocity,
+                TemplateParticles.deathEffect.friction,
+                TemplateParticles.deathEffect.minRadius,
+                TemplateParticles.deathEffect.maxRadius,
+                TemplateParticles.deathEffect.framesUntilSmaller,
+                TemplateParticles.deathEffect.color,
+                bloodColor
+            );
         }
     }
 }

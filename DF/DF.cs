@@ -75,7 +75,6 @@ namespace DF
 
         }
 
-        private Timer timer = new Timer(0, 50);
         protected override void Update(GameTime gameTime)
         {
 
@@ -141,24 +140,7 @@ namespace DF
         private void updateGame(GameTime gameTime)
         {
             Input.update();
-            
-            timer.update();
-            if (timer.oneIsRunning)
-            {
-                TemplateParticles.createPoofEffect(new Vector2(62, 62),
-                                                            10, 
-                                                            10, 
-                                                            0,
-                                                            1,
-                                                             0.7f,
-                                                            3,
-                                                            5,
-                                                      7,
-                                                            Color.MonoGameOrange,
-                                                            new List<Color>() { palette.red, palette.dark_purple }
-                                                            );
-            }
-            
+
             spaceBG.update();
             
             ParticleManager.update();
