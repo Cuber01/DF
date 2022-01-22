@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace DF.Framework
+namespace DF.Framework.Particles
 {
     public static class TemplateParticles
     {
@@ -21,7 +21,7 @@ namespace DF.Framework
             }
             else
             {
-                args.color = colors[Util.random.Next(0, colors.Count - 1)];
+                args.color = colors[Util.random.Next(0, colors.Count)];
             }
 
             while (amount >= 0)

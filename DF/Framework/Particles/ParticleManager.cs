@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using System.Linq;
 
-namespace DF.Framework
+namespace DF.Framework.Particles
 {
-    public class ParticleManager
+    public static class ParticleManager
     {
         public static List<Particle> particles = new List<Particle>();
 
@@ -18,7 +17,7 @@ namespace DF.Framework
         public static void update()
         {
             
-            for (int i = 0; i >= 0; i++)
+            for (int i = 0; i < particles.Count; i++)
             {
                 if (particles[i].radius < 0)
                 {

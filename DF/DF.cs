@@ -4,6 +4,7 @@ using System.Linq;
 using DF.Entities;
 using DF.Entities.Mobs;
 using DF.Framework;
+using DF.Framework.Particles;
 using DF.General;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -160,7 +161,7 @@ namespace DF
             timer.update();
             if (timer.oneIsRunning)
             {
-                TemplateParticles.createPoofEffect(new Vector2(62, 62), 62, 20, palette.red);
+                TemplateParticles.createPoofEffect(new Vector2(62, 62), 20, 5, Color.MonoGameOrange, new List<Color>() { palette.red, palette.dark_purple });
             }
             
             spaceBG.update();

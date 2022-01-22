@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 
-namespace DF.Framework
+namespace DF.Framework.Particles
 {
 
     public class Particle
