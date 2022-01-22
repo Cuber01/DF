@@ -5,7 +5,7 @@ namespace DF.Framework
 {
     public class ParticleManager
     {
-        private static List<Particle> particles = new List<Particle>();
+        public static List<Particle> particles = new List<Particle>();
 
         public static void addParticles(List<Particle> newParts)
         {

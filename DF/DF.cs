@@ -90,6 +90,7 @@ namespace DF
 
         }
 
+        private Timer timer = new Timer(50, 50);
         protected override void Update(GameTime gameTime)
         {
 
@@ -155,6 +156,12 @@ namespace DF
         private void updateGame(GameTime gameTime)
         {
             Input.update();
+            
+            timer.update();
+            if (timer.oneIsRunning)
+            {
+                TemplateParticles.createPoofEffect(new Vector2(62, 62), 62, 20, palette.red);
+            }
             
             spaceBG.update();
             
