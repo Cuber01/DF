@@ -12,6 +12,10 @@ namespace DF.Entities.Mobs
         private Vector2 destination;
         private const int offsetX = 5;
         private const int downYPerMove = 3;
+
+        private readonly Vector2 tipOffset = new Vector2(3, 7);
+        private int maxShootDelay = 100;
+        private int shootDelay = 100;
         
         public GreenAlien(Vector2 position)
         {
@@ -28,16 +32,31 @@ namespace DF.Entities.Mobs
             setNewCourse();
         }
 
-        private bool simp = true;
         public override void update(GameTime gameTime)
         {
-            if (simp)
-            {
-                GameMain.entities.Add(new BulletBold(GameMain.player.position, position, team));
-                simp = false;
-            }
+            updateShoot();
             
             base.update(gameTime);
+        }
+
+        private void updateShoot()
+        {
+            shootDelay--;
+
+            if (shootDelay <= 0)
+            {
+                shoot();
+                shootDelay = maxShootDelay;
+            }
+        }
+
+        private void shoot()
+        {
+            GameMain.entities.Add(new BulletBold(
+                                                    new Vector2(position.X + tipOffset.X, 999), 
+                                                     new Vector2(position.X + tipOffset.X, position.Y + tipOffset.Y),
+                                                            team
+                                                    ));
         }
 
         private void setNewCourse()

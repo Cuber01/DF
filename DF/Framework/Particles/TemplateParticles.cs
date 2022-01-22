@@ -23,6 +23,7 @@ namespace DF.Framework.Particles
         {
             particleArgs args = new particleArgs();
             args.friction = friction;
+            args.maxFramesUntilSmaller = framesUntilSmaller;
             
             while (amount > 0)
             {
@@ -31,8 +32,7 @@ namespace DF.Framework.Particles
 
                 args.position.X = position.X + ( Util.random.Next(0, range) * Util.randomPositiveOrNegative(1, 0.5f));
                 args.position.Y = position.Y + ( Util.random.Next(0, range) * Util.randomPositiveOrNegative(1, 0.5f));
-
-                args.maxFramesUntilSmaller = framesUntilSmaller;
+                
                 args.radius = Util.random.Next(minRadius, maxRadius);
                 
                 if (colors is null)
@@ -101,7 +101,7 @@ namespace DF.Framework.Particles
             5,
             7,
             Color.MonoGameOrange,
-            new List<Color>() { palette.red, palette.dark_purple }
+            null
         );
         
     }
