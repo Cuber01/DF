@@ -7,7 +7,7 @@ using MonoGame.Extended.Tweening;
 
 namespace DF.Entities.Mobs
 {
-    public class GreenAlien : Mob
+    public class GreenAlienBombardier : Mob
     {
         private Vector2 destination;
         private const int offsetX = 5;
@@ -17,7 +17,7 @@ namespace DF.Entities.Mobs
         private int maxShootDelay = 100;
         private int shootDelay = 100;
         
-        public GreenAlien(Vector2 position)
+        public GreenAlienBombardier(Vector2 position)
         {
             this.position = position;
             this.team = Team.enemies;
@@ -73,11 +73,11 @@ namespace DF.Entities.Mobs
                 (destination.X, destination.Y) = (GConst.canvasWidth - offsetX - sprite.Width, position.Y += downYPerMove);
             }
             
-            move(new Vector2(destination.X, position.Y));
+            executeCourse(new Vector2(destination.X, position.Y));
             
         }
 
-        private void move(Vector2 newPosition)
+        private void executeCourse(Vector2 newPosition)
         {
             // 1. Go to newPosition.X
             // 2. Go to newPosition.Y

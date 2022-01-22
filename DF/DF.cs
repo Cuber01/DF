@@ -50,7 +50,7 @@ namespace DF
             graphics.PreferredBackBufferHeight = GConst.windowHeight;
             graphics.ApplyChanges();
             
-            // Cap at 60fps
+            // Cap at 60fps. Get real
             this.IsFixedTimeStep = true;
             this.TargetElapsedTime = TimeSpan.FromSeconds(1d / 60d);
 
@@ -71,8 +71,8 @@ namespace DF
             // I really wanna keep my player outside of the main update loop. This sacrifice should save a lot of dirty code.
             player = new Player(new Vector2(100, 100));
             
-            entities.Add(new GreenAlien(new Vector2(50, 50)));
-
+            //entities.Add(new GreenAlienBombardier(new Vector2(50, 50)));
+            entities.Add(new GreenAlienAssaulter(new Vector2(50, 50)));
         }
 
         protected override void Update(GameTime gameTime)
