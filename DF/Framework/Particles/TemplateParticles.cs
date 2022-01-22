@@ -6,7 +6,21 @@ namespace DF.Framework.Particles
 {
     public static class TemplateParticles
     {
+
+        public static poofArgs deathEffect = new poofArgs(new Vector2(62, 62),
+            10,
+            10,
+            0,
+            1,
+            0.7f,
+            3,
+            5,
+            7,
+            Color.MonoGameOrange,
+            new List<Color>() { palette.red, palette.dark_purple }
+        );
         
+
         public static void createPoofEffect(    Vector2 position,           // Initial position of the particle system
                                                 int range,                  // Range in which particles should be spawned, counting from position
                                                 int amount,                 // Amount of particles
@@ -47,5 +61,48 @@ namespace DF.Framework.Particles
             }
             
         }
+        
+        public struct poofArgs
+        {
+            public poofArgs(
+                Vector2 position,
+                int range,  
+                int amount,
+                float minVelocity,
+                float maxVelocity,
+                float friction,
+                int minRadius,
+                int maxRadius,
+                int framesUntilSmaller,
+                Color color, 
+                List<Color> colors)
+            {
+                this.position = position;
+                this.range = range;
+                this.amount = amount;
+                this.minVelocity = minVelocity;
+                this.maxVelocity = maxVelocity;
+                this.friction = friction;
+                this.minRadius = minRadius;
+                this.maxRadius = maxRadius;
+                this.framesUntilSmaller = framesUntilSmaller;
+                this.color = color;
+                this.colors = colors;
+            }
+            
+            public Vector2 position;
+            public int range;
+            public int amount;
+            public float minVelocity;
+            public float maxVelocity;
+            public float friction;
+            public int minRadius;
+            public int maxRadius;
+            public int framesUntilSmaller;
+            public Color color;
+            public List<Color> colors;
+        
+        }
+        
     }
 }

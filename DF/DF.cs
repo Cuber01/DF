@@ -147,12 +147,12 @@ namespace DF
             {
                 TemplateParticles.createPoofEffect(new Vector2(62, 62),
                                                             10, 
-                                                            8, 
+                                                            10, 
                                                             0,
-                                                            10,
+                                                            1,
                                                              0.7f,
-                                                             3,
-                                                            6,
+                                                            3,
+                                                            5,
                                                       7,
                                                             Color.MonoGameOrange,
                                                             new List<Color>() { palette.red, palette.dark_purple }
