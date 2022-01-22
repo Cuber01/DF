@@ -18,7 +18,7 @@ namespace DF
     public class GameMain : Game
     {
         private static GameState gameState = GameState.playing;
-        public static List<Entity> entities = new List<Entity>();
+        public static readonly List<Entity> entities = new List<Entity>();
         
 
         private readonly GraphicsDeviceManager graphics;
@@ -72,26 +72,10 @@ namespace DF
             player = new Player(new Vector2(100, 100));
             
             entities.Add(new GreenAlien(new Vector2(50, 50)));
-            
-            ParticleManager.addParticles(
-            new List<Particle>() {
-                    new Particle(
-                        new particleArgs(
-                                    new Vector2(10,10),
-                                    new Vector2(0, 0),
-                                    0.99f,
-                        100,
-                                     10,
-                                           palette.red
-            
-                                    )
-                        )
-            }
-            );
 
         }
 
-        private Timer timer = new Timer(50, 50);
+        private Timer timer = new Timer(0, 50);
         protected override void Update(GameTime gameTime)
         {
 
@@ -161,7 +145,18 @@ namespace DF
             timer.update();
             if (timer.oneIsRunning)
             {
-                TemplateParticles.createPoofEffect(new Vector2(62, 62), 20, 5, Color.MonoGameOrange, new List<Color>() { palette.red, palette.dark_purple });
+                TemplateParticles.createPoofEffect(new Vector2(62, 62),
+                                                            10, 
+                                                            8, 
+                                                            0,
+                                                            10,
+                                                             0.7f,
+                                                             3,
+                                                            6,
+                                                      7,
+                                                            Color.MonoGameOrange,
+                                                            new List<Color>() { palette.red, palette.dark_purple }
+                                                            );
             }
             
             spaceBG.update();
