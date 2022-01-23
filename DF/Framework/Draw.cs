@@ -10,10 +10,15 @@ namespace DF.Framework
 		private readonly GraphicsDevice graphicsDevice;
 		private readonly SpriteBatch spriteBatch;
 
+		private Texture2D rectangleTexture;
+
 		public DrawUtils(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
 		{
 			this.spriteBatch = spriteBatch;
 			this.graphicsDevice = graphicsDevice;
+			
+			rectangleTexture = new Texture2D(graphicsDevice, 1, 1);
+			rectangleTexture.SetData(new[] { Color.White });
 		}
 		
 		public void spixel(int x, int y, Color color)
@@ -212,7 +217,7 @@ namespace DF.Framework
 		{
 			if (filled)
 			{
-				spriteBatch.Draw(pixel, rect, color);
+				spriteBatch.Draw(rectangleTexture, rect, color);
 			}
 			else
 			{

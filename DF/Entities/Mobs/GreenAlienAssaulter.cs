@@ -4,7 +4,6 @@ using DF.Framework;
 using DF.General;
 using Microsoft.Xna.Framework;
 using MonoGame.Extended;
-using MonoGame.Extended.Tweening;
 
 namespace DF.Entities.Mobs
 {
@@ -12,8 +11,8 @@ namespace DF.Entities.Mobs
     {
         private readonly Vector2 tipOffset = new Vector2(3, 7);
 
-        private const int maxShootDelay = 300;
-        private int shootDelay = 300;
+        private const int maxShootDelay = 200;
+        private int shootDelay = 200;
         
         public GreenAlienAssaulter(Vector2 position)
         {
@@ -68,7 +67,7 @@ namespace DF.Entities.Mobs
         {
             float dist = Util.calculateDistance(position, destination);
             this.velocity.X = (destination.X - position.X) / (dist*2); // To make him slower
-            this.velocity.Y = (destination.Y - position.Y) / (dist*2);
+            this.velocity.Y = (destination.Y - position.Y) / (dist*4);
         }
     }
     

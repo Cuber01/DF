@@ -35,7 +35,7 @@ namespace DF.Entities.Mobs
             }
         }
 
-        private void die()
+        protected void die()
         {
             initDeathEffect();
             

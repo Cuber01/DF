@@ -72,7 +72,10 @@ namespace DF
             player = new Player(new Vector2(100, 100));
             
             //entities.Add(new GreenAlienBombardier(new Vector2(50, 50)));
-            entities.Add(new GreenAlienAssaulter(new Vector2(50, 50)));
+            entities.Add(new Asteroid(new Vector2(50, 0)));
+            entities.Add(new Asteroid(new Vector2(75, 0)));
+            entities.Add(new Asteroid(new Vector2(90, 0)));
+            entities.Add(new Asteroid(new Vector2(20, 0)));
         }
 
         protected override void Update(GameTime gameTime)
